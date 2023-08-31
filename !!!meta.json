@@ -1,0 +1,123 @@
+{
+	"formatVersion": 2,
+	"appVersion": "0.61.4-beta",
+	"files": [
+		{
+			"noteId": "zPcIemVf1f7J",
+			"notePath": [
+				"zPcIemVf1f7J"
+			],
+			"isClone": false,
+			"title": "Trilium-Heatmap",
+			"notePosition": 30,
+			"prefix": null,
+			"isExpanded": false,
+			"type": "render",
+			"mime": "",
+			"dirFileName": "Trilium-Heatmap",
+			"noImport": false,
+			"attributes": [
+				{
+					"type": "relation",
+					"name": "renderNote",
+					"value": "IYIWDxEQeyVh",
+					"isInheritable": false,
+					"position": 10
+				}
+			],
+			"attachments": [],
+			"children": [
+				{
+					"noteId": "IYIWDxEQeyVh",
+					"notePath": [
+						"zPcIemVf1f7J",
+						"IYIWDxEQeyVh"
+					],
+					"isClone": false,
+					"title": "html",
+					"notePosition": 10,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "code",
+					"mime": "text/html",
+					"dataFileName": "html.html",
+					"dirFileName": "html",
+					"noImport": false,
+					"attributes": [],
+					"attachments": [],
+					"children": [
+						{
+							"noteId": "F5FMCXQBYGM0",
+							"notePath": [
+								"zPcIemVf1f7J",
+								"IYIWDxEQeyVh",
+								"F5FMCXQBYGM0"
+							],
+							"isClone": false,
+							"title": "js",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "code",
+							"mime": "application/javascript;env=frontend",
+							"dataFileName": "js.js",
+							"dirFileName": "js",
+							"noImport": false,
+							"attributes": [],
+							"attachments": [],
+							"children": [
+								{
+									"noteId": "AHLA3P0eA4EB",
+									"notePath": [
+										"zPcIemVf1f7J",
+										"IYIWDxEQeyVh",
+										"F5FMCXQBYGM0",
+										"AHLA3P0eA4EB"
+									],
+									"isClone": false,
+									"title": "d3",
+									"notePosition": 30,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "file",
+									"mime": "application/javascript",
+									"dataFileName": "d3.js",
+									"noImport": false,
+									"attributes": [
+										{
+											"type": "label",
+											"name": "originalFileName",
+											"value": "d3",
+											"isInheritable": false,
+											"position": 10
+										},
+										{
+											"type": "label",
+											"name": "archived",
+											"value": "",
+											"isInheritable": false,
+											"position": 20
+										}
+									],
+									"attachments": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"noImport": true,
+			"dataFileName": "navigation.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "index.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "style.css"
+		}
+	]
+}
