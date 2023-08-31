@@ -3,9 +3,9 @@
 	"appVersion": "0.61.4-beta",
 	"files": [
 		{
-			"noteId": "zPcIemVf1f7J",
+			"noteId": "tMja7JAriyA5",
 			"notePath": [
-				"zPcIemVf1f7J"
+				"tMja7JAriyA5"
 			],
 			"isClone": false,
 			"title": "Trilium-Heatmap",
@@ -20,18 +20,25 @@
 				{
 					"type": "relation",
 					"name": "renderNote",
-					"value": "IYIWDxEQeyVh",
+					"value": "JmstipmxRbhO",
 					"isInheritable": false,
 					"position": 10
+				},
+				{
+					"type": "label",
+					"name": "iconClass",
+					"value": "bx bx-objects-vertical-bottom",
+					"isInheritable": false,
+					"position": 11
 				}
 			],
 			"attachments": [],
 			"children": [
 				{
-					"noteId": "IYIWDxEQeyVh",
+					"noteId": "JmstipmxRbhO",
 					"notePath": [
-						"zPcIemVf1f7J",
-						"IYIWDxEQeyVh"
+						"tMja7JAriyA5",
+						"JmstipmxRbhO"
 					],
 					"isClone": false,
 					"title": "html",
@@ -43,15 +50,23 @@
 					"dataFileName": "html.html",
 					"dirFileName": "html",
 					"noImport": false,
-					"attributes": [],
+					"attributes": [
+						{
+							"type": "label",
+							"name": "archived",
+							"value": "",
+							"isInheritable": true,
+							"position": 10
+						}
+					],
 					"attachments": [],
 					"children": [
 						{
-							"noteId": "F5FMCXQBYGM0",
+							"noteId": "9EQTP14cO2yj",
 							"notePath": [
-								"zPcIemVf1f7J",
-								"IYIWDxEQeyVh",
-								"F5FMCXQBYGM0"
+								"tMja7JAriyA5",
+								"JmstipmxRbhO",
+								"9EQTP14cO2yj"
 							],
 							"isClone": false,
 							"title": "js",
@@ -67,12 +82,12 @@
 							"attachments": [],
 							"children": [
 								{
-									"noteId": "AHLA3P0eA4EB",
+									"noteId": "ltKwhy16qPOu",
 									"notePath": [
-										"zPcIemVf1f7J",
-										"IYIWDxEQeyVh",
-										"F5FMCXQBYGM0",
-										"AHLA3P0eA4EB"
+										"tMja7JAriyA5",
+										"JmstipmxRbhO",
+										"9EQTP14cO2yj",
+										"ltKwhy16qPOu"
 									],
 									"isClone": false,
 									"title": "d3",
@@ -90,13 +105,6 @@
 											"value": "d3",
 											"isInheritable": false,
 											"position": 10
-										},
-										{
-											"type": "label",
-											"name": "archived",
-											"value": "",
-											"isInheritable": false,
-											"position": 20
 										}
 									],
 									"attachments": []
