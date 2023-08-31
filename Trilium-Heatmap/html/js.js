@@ -3,6 +3,7 @@ const colorRange = ["#FC9", "#fd5409"]; //fill in the range of colors you like.
 const dataRange = [1, 40]; //fill in the number of note modifications that are suitable for you.
 const offsetX = 20; //Adjust the offset of the tooltip according to your needs.
 const offsetY = 40; //Adjust the offset of the tooltip according to your needs.
+const years = 1; // Adjust the number of years to show
 
 function generateDataset(displayedMonthCount, options = {}) {
     const config = Object.assign({}, {
@@ -10,7 +11,7 @@ function generateDataset(displayedMonthCount, options = {}) {
         fill: {},
     }, options);
     const months = [];
-    const days = [];
+    let days = [];
 
     let referDate = config.endDate ? new Date(config.endDate) : new Date();
     referDate.setDate(1); // Ensure we start from the first day of the month
@@ -40,21 +41,9 @@ function generateDataset(displayedMonthCount, options = {}) {
         days.unshift(...monthDays)
     }
 
-    let firstDate = days[0].date;
-    let d = new Date(firstDate);
-    let dayOfWeek= d.getDay();
-    if (dayOfWeek == 0) {
-        dayOfWeek= 7;
-    }
+    // trim dataset to full years
+    days = days.slice(days.length % 365);
 
-    for (let i = 1; i < dayOfWeek; i++) {
-        let d = new Date(firstDate);
-        d.setDate(d.getDate() - i);
-
-        let v = [d.getFullYear(), (d.getMonth() + 1).toString().padStart(2, '0'), d.getDate().toString().padStart(2, '0')];
-
-        days.unshift({ date: v.join('-') });
-    }
     return { days, months };
 }
 
@@ -67,26 +56,27 @@ const datas = await api.runOnBackend(() => {
         GROUP BY date`);
     return editedNotes
 });
-const dataset = generateDataset(12, {
+const dataset = generateDataset(12 * years, {
     fill: datas,
 });
 
 const width = 1000;
 const height = 180;
+const totalHeight = height * years;
 const margin = 30;
 const weekBoxWidth = 20;
 const monthBoxHeight = 20;
 
 const svg = d3.select('#trilium-heatmap')
     .attr('width', width)
-    .attr('height', height);
+    .attr('height', totalHeight);
 
 const monthBox = svg.append('g').attr(
     'transform',
     `translate(${margin + weekBoxWidth}, ${margin})`
 );
 const monthScale = d3.scaleLinear()
-    .domain([0, dataset.months.length])
+    .domain([0, dataset.months.length / years])
     .range([0, width - margin - weekBoxWidth + 10]);
 
 monthBox.selectAll('text').data(dataset.months).enter()
@@ -95,7 +85,8 @@ monthBox.selectAll('text').data(dataset.months).enter()
     .attr('font-size', '16px')
     .attr('fill', '#999')
     .attr('cursor', 'default')
-    .attr('x', (v, i) => monthScale(i));
+    .attr('x', (v, i) => monthScale(i % 12))
+    .attr('y', (v, i) => Math.floor(i / 12) * height);
 
 const weekBox = svg.append('g').attr(
     'transform',
@@ -119,11 +110,12 @@ const cellBox = svg.append('g').attr(
 
 const cellMargin = 3;
 const cellSize = (height - margin - monthBoxHeight - cellMargin * 6 - 10) / 7;
-let cellCol = 0;
+let cellCol = 1;
 const colorScale = d3.scaleSequential()
     .domain(dataRange)
     .interpolator(d3.interpolateRgb(colorRange[0], colorRange[1]));
 
+const weekOffset = (new Date(dataset.days[0].date).getDay() + 6) % 7;
 const cell = cellBox.selectAll('rect').data(dataset.days).enter()
     .append('rect')
     .attr('width', cellSize)
@@ -138,15 +130,17 @@ const cell = cellBox.selectAll('rect').data(dataset.days).enter()
         }
     })
     .attr('x', (v, i) => {
-        if (i % 7 == 0) {
+        if ((i + weekOffset) % 7 == 0 && i != 0) {
             cellCol++;
         }
         const x = (cellCol - 1) * cellSize;
-        return cellCol > 1 ? x + cellMargin * (cellCol - 1) : x;
+        const offset = Math.floor(i / (365)) * -((cellMargin + cellSize) * 52);
+        return offset + (cellCol > 1 ? x + cellMargin * (cellCol - 1) : x);
     })
     .attr('y', (v, i) => {
-        const y = i % 7;
-        return y > 0 ? y * cellSize + cellMargin * y : y * cellSize;
+        const y = (i + weekOffset) % 7;
+        const offset = Math.floor(i / (365)) * height;
+        return offset + (y > 0 ? y * cellSize + cellMargin * y : y * cellSize);
     })
     .on("mouseover", function(d, v) {
         const element = d3.select(this);
