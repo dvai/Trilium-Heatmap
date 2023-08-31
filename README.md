@@ -14,3 +14,8 @@ Powered by [d3.js](https://d3js.org/).
 1. Download the zip file from the latest Releases.
 2. In the Trilium note, right-click to import, select the zip file, uncheck "Safe import," and then click the "Import" button.
 3. Enjoy it!
+
+## Upgrade
+You can choose to directly copy the new [html](./Trilium-Heatmap/html.html) and [js](./Trilium-Heatmap/html/js.js) files to replace the corresponding files in Trilium.
+
+Alternatively, you can choose to delete the original version and import the new zip file.
