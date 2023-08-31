@@ -2,6 +2,7 @@
 Display a note modification heatmap in your Trilium note, just like the Github contributions heatmap!
 ![](./Trilium-Heatmap.png)
 Powered by [d3.js](https://d3js.org/).
+
 (It may not work properly before Trilium v0.60, If it doesn't work, please upgrade your Trilium version.)
 
 ## Features
