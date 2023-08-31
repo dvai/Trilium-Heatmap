@@ -1,0 +1,131 @@
+{
+	"formatVersion": 2,
+	"appVersion": "0.61.4-beta",
+	"files": [
+		{
+			"noteId": "tMja7JAriyA5",
+			"notePath": [
+				"tMja7JAriyA5"
+			],
+			"isClone": false,
+			"title": "Trilium-Heatmap",
+			"notePosition": 30,
+			"prefix": null,
+			"isExpanded": false,
+			"type": "render",
+			"mime": "",
+			"dirFileName": "Trilium-Heatmap",
+			"noImport": false,
+			"attributes": [
+				{
+					"type": "relation",
+					"name": "renderNote",
+					"value": "JmstipmxRbhO",
+					"isInheritable": false,
+					"position": 10
+				},
+				{
+					"type": "label",
+					"name": "iconClass",
+					"value": "bx bx-objects-vertical-bottom",
+					"isInheritable": false,
+					"position": 11
+				}
+			],
+			"attachments": [],
+			"children": [
+				{
+					"noteId": "JmstipmxRbhO",
+					"notePath": [
+						"tMja7JAriyA5",
+						"JmstipmxRbhO"
+					],
+					"isClone": false,
+					"title": "html",
+					"notePosition": 10,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "code",
+					"mime": "text/html",
+					"dataFileName": "html.html",
+					"dirFileName": "html",
+					"noImport": false,
+					"attributes": [
+						{
+							"type": "label",
+							"name": "archived",
+							"value": "",
+							"isInheritable": true,
+							"position": 10
+						}
+					],
+					"attachments": [],
+					"children": [
+						{
+							"noteId": "9EQTP14cO2yj",
+							"notePath": [
+								"tMja7JAriyA5",
+								"JmstipmxRbhO",
+								"9EQTP14cO2yj"
+							],
+							"isClone": false,
+							"title": "js",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "code",
+							"mime": "application/javascript;env=frontend",
+							"dataFileName": "js.js",
+							"dirFileName": "js",
+							"noImport": false,
+							"attributes": [],
+							"attachments": [],
+							"children": [
+								{
+									"noteId": "ltKwhy16qPOu",
+									"notePath": [
+										"tMja7JAriyA5",
+										"JmstipmxRbhO",
+										"9EQTP14cO2yj",
+										"ltKwhy16qPOu"
+									],
+									"isClone": false,
+									"title": "d3",
+									"notePosition": 30,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "file",
+									"mime": "application/javascript",
+									"dataFileName": "d3.js",
+									"noImport": false,
+									"attributes": [
+										{
+											"type": "label",
+											"name": "originalFileName",
+											"value": "d3",
+											"isInheritable": false,
+											"position": 10
+										}
+									],
+									"attachments": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"noImport": true,
+			"dataFileName": "navigation.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "index.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "style.css"
+		}
+	]
+}

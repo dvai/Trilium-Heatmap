@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<style>
+    #heatmap-tooltip{
+        cursor: default;
+        background: var(--main-background-color);
+        border-radius: 2px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+        box-sizing: border-box;
+        color: var(--main-text-color);
+        font-size: 12px;
+        line-height: 1.4;
+        padding: 1px 3px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <svg id="trilium-heatmap"></svg>
+    </div>
+    <div id="heatmap-tooltip" style="position: absolute; display: none;"></div>
+</body>
+</html>
