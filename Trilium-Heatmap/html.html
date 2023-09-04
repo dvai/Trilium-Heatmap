@@ -16,10 +16,22 @@
         padding: 1px 3px;
         text-align: center;
     }
+    #button-previous:hover, #button-next:hover {
+        cursor: default;
+        transform: translateY(-2px);
+    }
 </style>
 <body>
     <div style="display: flex; justify-content: center; align-items: center;">
         <svg id="trilium-heatmap"></svg>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;font-size: 13px;">
+        <a style="margin-right: 20px;" id="button-previous">
+            &larr; Previous
+        </a>
+        <a id="button-next">
+            Next &rarr;
+        </a>
     </div>
     <div id="heatmap-tooltip" style="position: absolute; display: none;"></div>
 </body>
