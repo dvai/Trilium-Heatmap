@@ -143,7 +143,7 @@ function updateCells(cellBox, dataset) {
             tooltip.style.display = "none";
         })
         .on("click", async function(d, v) {
-            const noteId = await api.runOnBackend(async (date) => {
+            const noteId = await api.runAsyncOnBackendWithManualTransactionHandling(async (date) => {
                 const note = await api.getDayNote(date);
                 return note.noteId;
             }, [v.date]);
