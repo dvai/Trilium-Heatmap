@@ -49,7 +49,7 @@ const datas = await api.runOnBackend(() => {
     const editedNotes = api.sql.getMap(`SELECT date , COUNT(*) FROM (
             SELECT noteId, SUBSTR(utcDateModified, 0, 11) AS date FROM notes
             UNION
-            SELECT DISTINCT noteId, SUBSTR(utcDateCreated, 0, 11) AS date FROM revisions
+            SELECT DISTINCT noteId, SUBSTR(utcDateCreated, 0, 11) AS date FROM note_revisions
         )
         GROUP BY date`);
     return editedNotes;
